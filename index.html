@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ps" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>خان بازار افغانستان | KHAN MARKET 2026 Elite Marketplace</title>
+    
+    <!-- SEO & Google Indexing Data -->
+    <meta name="description" content="KHAN MARKET - د افغانستان تر ټولو پرمختللی آنلاین مارکېټ. اخیستل، پلورل، وی‌آی‌پي سبسکرپشنونه او په ۳۴ ولایتونو کې وړیا تحویلي.">
+    <meta name="keywords" content="Khan Market, خان بازار, آنلاین پلورنځی, پریمیم سبسکرپشن, افغانستان خرید و فروش, کابل, هرات, کندهار">
+    
+    <!-- Schema.org JSON-LD Structured Data for Google Indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "WebSite",
+      "name": "KHAN MARKET Afghanistan",
+      "url": "https://khanmarket.af",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://khanmarket.af/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS & Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        },
+                        amberGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* 2026 Glassmorphism UI */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-header {
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.15);
+        }
+
+        /* 3D Dynamic Zoom */
+        .zoom-box {
+            overflow: hidden;
+            position: relative;
+        }
+        .zoom-box img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .zoom-box:hover img {
+            transform: scale(1.15) rotate(0.5deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #14b8a6;
+            border-radius: 4px;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.35);
+        }
+
+        .neon-gold {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.03); opacity: 0.9; }
+        }
+        .pulse-btn {
+            animation: pulseGlow 2.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="pb-24 pt-20">
+
+    <!-- Top Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-amberGold-500 flex items-center justify-center font-black text-xl text-white shadow-lg neon-glow">
+                    خـ
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg tracking-wide bg-gradient-to-r from-teal-300 via-emerald-400 to-amber-400 bg-clip-text text-transparent">
+                        KHAN MARKET
+                    </h1>
+                    <p class="text-[10px] text-gray-400 -mt-1 font-semibold">خان بازار افغانستان</p>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex-1 max-w-xl relative">
+                <div class="relative flex items-center">
+                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="محصول، جامې، سایز یا ولایت ولټوئ..." 
+                        class="w-full bg-gray-900/90 border border-teal-500/30 rounded-full py-2.5 pr-10 pl-24 text-sm text-gray-200 placeholder-gray-400 focus:outline-none focus:border-teal-400 transition-all">
+                    
+                    <i class="fa-solid fa-magnifying-glass absolute right-3.5 text-gray-400"></i>
+
+                    <button onclick="triggerCameraSearch()" title="د عکس له لارې سرچ" class="absolute left-12 text-teal-400 hover:text-teal-300 p-1.5 transition-colors">
+                        <i class="fa-solid fa-camera text-base"></i>
+                    </button>
+
+                    <button onclick="toggleCurrency()" id="currencyBtn" class="absolute left-2 text-xs font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30 rounded-full px-2 py-1">
+                        AFN ؋
+                    </button>
+                </div>
+            </div>
+
+            <!-- Top Actions -->
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="openDashboardModal()" class="bg-teal-600/30 text-teal-300 border border-teal-500/40 hover:bg-teal-600/50 px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all">
+                    <i class="fa-solid fa-chart-line text-teal-400"></i>
+                    <span>زما ډشبورډ او لیستونه</span>
+                </button>
+
+                <button onclick="openSubModal()" class="bg-gradient-to-r from-amberGold-500 to-amberGold-600 hover:from-amberGold-600 text-gray-950 font-bold px-3 py-2 rounded-xl text-xs transition-all shadow-md flex items-center gap-1.5">
+                    <i class="fa-solid fa-crown text-gray-950"></i>
+                    <span>VIP پلانونه</span>
+                </button>
+
+                <button onclick="openPostModal()" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-3 py-2 rounded-xl text-xs flex items-center gap-1.5 transition-all">
+                    <i class="fa-solid fa-plus-circle"></i>
+                    <span>وړیا اعلان ولګوئ</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 mt-4 space-y-8">
+
+        <!-- Hero Feature Banner -->
+        <section class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-gray-900 via-teal-950 to-gray-900 border border-teal-500/20 p-6 md:p-10 shadow-2xl">
+            <div class="relative z-10 max-w-2xl space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-bold">
+                    <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+                    د ۲۰۲۶ نوی پرمختللی افغاني مارکېټ
+                </div>
+                <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">
+                    په ۳۴ ولایتونو کې د باوري محصولاتو تحویلي او VIP سبسکریپشن
+                </h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    جامې، موټر، برېښنایي وسایل او محلي توکي له **وړیا تحویلۍ** او **افغاني امانت خدمتونو** سره واخلئ.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
+                    <div class="bg-gray-900/60 border border-white/5 p-3 rounded-2xl">
+                        <p class="text-xs text-gray-400">ولایتونه</p>
+                        <p class="text-lg font-bold text-teal-400">۳۴ ولایتونه</p>
+                    </div>
+                    <div class="bg-gray-900/60 border border-white/5 p-3 rounded-2xl">
+                        <p class="text-xs text-gray-400">د لېږد زمينه</p>
+                        <p class="text-lg font-bold text-emerald-400">وړیا تحویلي</p>
+                    </div>
+                    <div class="bg-gray-900/60 border border-white/5 p-3 rounded-2xl">
+                        <p class="text-xs text-gray-400">سبسکرپشن</p>
+                        <p class="text-lg font-bold text-amberGold-400">VIP Tiers</p>
+                    </div>
+                    <div class="bg-gray-900/60 border border-white/5 p-3 rounded-2xl">
+                        <p class="text-xs text-gray-400">تادیات</p>
+                        <p class="text-lg font-bold text-blue-400">شهزاده / mPaisai</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Filters Carousel -->
+        <section class="space-y-3">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-teal-400"></i>
+                    د محصولاتو کټګورۍ
+                </h3>
+                <span class="text-xs text-gray-400">ټول لیدل</span>
+            </div>
+
+            <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+                <button onclick="filterCategory('all')" class="cat-btn active bg-teal-600 text-white px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap shadow-md transition-all">
+                    ✨ ټول محصولات
+                </button>
+                <button onclick="filterCategory('fashion')" class="cat-btn bg-gray-800/80 hover:bg-gray-700 text-gray-300 border border-white/5 px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all">
+                    👔 جامې او فېشن
+                </button>
+                <button onclick="filterCategory('kids')" class="cat-btn bg-gray-800/80 hover:bg-gray-700 text-gray-300 border border-white/5 px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all">
+                    👶 ماشومان او وسایل
+                </button>
+                <button onclick="filterCategory('vehicles')" class="cat-btn bg-gray-800/80 hover:bg-gray-700 text-gray-300 border border-white/5 px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all">
+                    🚗 موټر او وسایط
+                </button>
+                <button onclick="filterCategory('electronics')" class="cat-btn bg-gray-800/80 hover:bg-gray-700 text-gray-300 border border-white/5 px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all">
+                    📱 موبایل او برېښنایي
+                </button>
+                <button onclick="filterCategory('agriculture')" class="cat-btn bg-gray-800/80 hover:bg-gray-700 text-gray-300 border border-white/5 px-4 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap transition-all">
+                    🌿 زعفران او زراعت
+                </button>
+            </div>
+        </section>
+
+        <!-- Product Cards Grid -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-fire text-amberGold-400"></i>
+                    تازه او تایید شوي VIP اعلانونه
+                </h3>
+            </div>
+
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- Product Card 1 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden hover:border-teal-500/40 transition-all duration-300 shadow-xl" data-category="fashion" data-title="افغاني خامه دوزي جامې" data-province="کابل">
+                    <div class="zoom-box h-52 bg-gray-900 relative">
+                        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="جامې" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-amberGold-500 text-gray-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow-md">
+                            <i class="fa-solid fa-crown ml-1"></i> VIP Diamond
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span><i class="fa-solid fa-location-dot text-teal-400 ml-1"></i> کابل - شهر نو</span>
+                            <span class="text-amberGold-400 font-bold"><i class="fa-solid fa-star ml-1"></i> 4.9</span>
+                        </div>
+                        <h4 class="font-bold text-base text-white hover:text-teal-300 transition-colors">افغاني شاندار خامه دوزي واسکټ او جامې</h4>
+                        
+                        <div class="flex items-center justify-between pt-1 text-xs text-gray-300">
+                            <span class="bg-gray-800 px-2 py-0.5 rounded-md">سایز: M, L, XL</span>
+                            <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-truck-fast ml-1"></i> Free Shipping</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div>
+                                <p class="text-[10px] text-gray-400">قیمت:</p>
+                                <p class="text-lg font-black text-teal-400 price-val" data-afn="4500" data-usd="65">4,500 AFN</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="https://wa.me/93700000000" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-2 rounded-xl text-xs flex items-center gap-1 transition-all">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i> واټساپ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden hover:border-teal-500/40 transition-all duration-300 shadow-xl" data-category="vehicles" data-title="Toyota Corolla 2018" data-province="هرات">
+                    <div class="zoom-box h-52 bg-gray-900 relative">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Toyota Corolla" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-amberGold-500 text-gray-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-md">
+                            <i class="fa-solid fa-shield-halved ml-1"></i> اسناد پاک
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span><i class="fa-solid fa-location-dot text-teal-400 ml-1"></i> هرات - انجيل</span>
+                            <span class="text-amberGold-400 font-bold"><i class="fa-solid fa-star ml-1"></i> 5.0</span>
+                        </div>
+                        <h4 class="font-bold text-base text-white hover:text-teal-300 transition-colors">Toyota Corolla 2018 S-Class چت خلاص</h4>
+                        
+                        <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div>
+                                <p class="text-[10px] text-gray-400">قیمت:</p>
+                                <p class="text-lg font-black text-teal-400 price-val" data-afn="890000" data-usd="12800">890,000 AFN</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="https://wa.me/93700000000" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-2 rounded-xl text-xs flex items-center gap-1 transition-all">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i> واټساپ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden hover:border-teal-500/40 transition-all duration-300 shadow-xl" data-category="electronics" data-title="iPhone 15 Pro Max ATRA" data-province="کندهار">
+                    <div class="zoom-box h-52 bg-gray-900 relative">
+                        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80" alt="iPhone 15 Pro Max" class="w-full h-full object-cover">
+                        <div class="absolute top-3 right-3 bg-blue-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-md">
+                            <i class="fa-solid fa-check ml-1"></i> ATRA Registered
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-gray-400">
+                            <span><i class="fa-solid fa-location-dot text-teal-400 ml-1"></i> کندهار - عینو مینه</span>
+                            <span class="text-amberGold-400 font-bold"><i class="fa-solid fa-star ml-1"></i> 4.8</span>
+                        </div>
+                        <h4 class="font-bold text-base text-white hover:text-teal-300 transition-colors">iPhone 15 Pro Max 256GB Natural Titanium</h4>
+                        
+                        <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                            <div>
+                                <p class="text-[10px] text-gray-400">قیمت:</p>
+                                <p class="text-lg font-black text-teal-400 price-val" data-afn="92500" data-usd="1330">92,500 AFN</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="https://wa.me/93700000000" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3 py-2 rounded-xl text-xs flex items-center gap-1 transition-all">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i> واټساپ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Us & Footer Section -->
+        <footer class="glass-card rounded-3xl p-6 md:p-8 space-y-6 border border-teal-500/20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-amberGold-500 flex items-center justify-center font-black text-sm text-white">
+                            خـ
+                        </div>
+                        <h4 class="font-bold text-base text-white">د خان بازار په اړه (About Us)</h4>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        **خان بازار (KHAN MARKET)** د افغانستان تر ټولو باوري، عصري او لوړ پوړی ډېجیټل مارکېټ دی چې په ۳۴ ولایتونو کې پېرودونکي او پلورونکي په مستقیم ډول سره نښلوي.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base text-white flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-teal-400"></i>
+                        وړیا تحویلي او امانت خوندیتوب
+                    </h4>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-emerald-400"></i>
+                            <span>په ټول افغانستان کې د وړيا تحویلۍ ځانګړي امکانيات</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-emerald-400"></i>
+                            <span>د خان بازار ۵۰٪ او ۱۰۰٪ امانت خدمتونه (Escrow)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-base text-white flex items-center gap-2">
+                        <i class="fa-solid fa-headset text-amberGold-400"></i>
+                        ارتباط او مستقیمې اړیکې
+                    </h4>
+                    <p class="text-xs text-gray-300">
+                        تلیفون: <span dir="ltr" class="text-teal-400 font-bold">+93 700 000 000</span>
+                    </p>
+                    <p class="text-xs text-gray-300">
+                        واټساپ: <span dir="ltr" class="text-emerald-400 font-bold">+93 780 000 000</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-4 text-center text-xs text-gray-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <p>© ۲۰۲۶ خان بازار (KHAN MARKET Afghanistan). ټول حقونه خوندي دي.</p>
+                <p class="text-teal-400 font-bold">Khan</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Temu-Style Mobile Bottom Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 glass-header border-t border-teal-500/20 px-3 py-2">
+        <div class="grid grid-cols-5 gap-1 text-center">
+            
+            <a href="#" class="flex flex-col items-center gap-1 text-teal-400">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span class="text-[10px] font-bold">کور</span>
+            </a>
+
+            <button onclick="openDashboardModal()" class="flex flex-col items-center gap-1 text-gray-400 hover:text-teal-300">
+                <i class="fa-solid fa-chart-pie text-lg text-teal-400"></i>
+                <span class="text-[10px]">ډشبورډ</span>
+            </button>
+
+            <!-- Center Plus Button -->
+            <button onclick="openPostModal()" class="flex flex-col items-center -mt-5">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amberGold-500 to-teal-500 text-gray-950 flex items-center justify-center font-black text-xl shadow-lg neon-glow">
+                    <i class="fa-solid fa-plus text-white"></i>
+                </div>
+                <span class="text-[9px] font-bold text-amberGold-400 mt-0.5">اعلان</span>
+            </button>
+
+            <button onclick="openAshnaAI()" class="flex flex-col items-center gap-1 text-gray-400 hover:text-teal-300">
+                <i class="fa-solid fa-robot text-lg text-teal-400"></i>
+                <span class="text-[10px]">اشنا AI</span>
+            </button>
+
+            <button onclick="openSubModal()" class="flex flex-col items-center gap-1 text-amberGold-400">
+                <i class="fa-solid fa-crown text-lg"></i>
+                <span class="text-[10px]">VIP</span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- USER & SELLER DASHBOARD MODAL (جدولونه او لېستونه) -->
+    <div id="dashboardModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-4xl rounded-3xl p-6 space-y-6 max-h-[90vh] overflow-y-auto border border-teal-500/30">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-gray-950 font-black text-lg">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">د پلورونکي او کاروونکي ډشبورډ (Dashboard)</h3>
+                        <p class="text-xs text-teal-400">د اشنا AI ثبت شوي آرډرونه او جدولونه</p>
+                    </div>
+                </div>
+                <button onclick="closeDashboardModal()" class="text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Stats Overview Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gray-900/80 p-4 rounded-2xl border border-white/5 space-y-1">
+                    <p class="text-xs text-gray-400">ټول اعلانات</p>
+                    <p class="text-xl font-black text-teal-400">12 دانې</p>
+                </div>
+                <div class="bg-gray-900/80 p-4 rounded-2xl border border-white/5 space-y-1">
+                    <p class="text-xs text-gray-400">راغلي فرمایشونه</p>
+                    <p class="text-xl font-black text-amberGold-400">28 لېسته</p>
+                </div>
+                <div class="bg-gray-900/80 p-4 rounded-2xl border border-white/5 space-y-1">
+                    <p class="text-xs text-gray-400">عمومي پلور</p>
+                    <p class="text-xl font-black text-emerald-400">145,000 ؋</p>
+                </div>
+                <div class="bg-gray-900/80 p-4 rounded-2xl border border-white/5 space-y-1">
+                    <p class="text-xs text-gray-400">حالت</p>
+                    <p class="text-xs font-bold text-blue-400 mt-2">VIP Verified</p>
+                </div>
+            </div>
+
+            <!-- Live Orders & Data Table (د اشنا AI جدول) -->
+            <div class="space-y-3">
+                <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-amberGold-400"></i>
+                    د پېرودونکو د فرمایشونو جدول (Orders Table):
+                </h4>
+
+                <div class="overflow-x-auto rounded-2xl border border-white/10">
+                    <table class="w-full text-right text-xs text-gray-300">
+                        <thead class="bg-gray-900/90 text-teal-400 font-bold border-b border-white/10">
+                            <tr>
+                                <th class="p-3">مشتري/نوم</th>
+                                <th class="p-3">تلیفون</th>
+                                <th class="p-3">ولایت او ادرس</th>
+                                <th class="p-3">جنس او سایز</th>
+                                <th class="p-3">قیمت</th>
+                                <th class="p-3">حالت</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 bg-gray-900/40">
+                            <tr class="hover:bg-teal-500/5 transition-colors">
+                                <td class="p-3 font-bold text-white">احمد زیار</td>
+                                <td class="p-3 text-teal-300" dir="ltr">+93 700 123 456</td>
+                                <td class="p-3">کابل، خیرخانه ۳ ناحیه</td>
+                                <td class="p-3">خامه دوزي واسکټ (سایز L)</td>
+                                <td class="p-3 font-bold text-teal-400">4,500 AFN</td>
+                                <td class="p-3"><span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full text-[10px]">لیږل شوی</span></td>
+                            </tr>
+                            <tr class="hover:bg-teal-500/5 transition-colors">
+                                <td class="p-3 font-bold text-white">استاد نظري</td>
+                                <td class="p-3 text-teal-300" dir="ltr">+93 799 888 777</td>
+                                <td class="p-3">هرات، انجل ولسوالي</td>
+                                <td class="p-3">کورولا موټر 2018</td>
+                                <td class="p-3 font-bold text-teal-400">890,000 AFN</td>
+                                <td class="p-3"><span class="bg-amberGold-500/20 text-amberGold-400 px-2 py-0.5 rounded-full text-[10px]">د جریان په حال کې</span></td>
+                            </tr>
+                            <tr class="hover:bg-teal-500/5 transition-colors">
+                                <td class="p-3 font-bold text-white">خالد هوتک</td>
+                                <td class="p-3 text-teal-300" dir="ltr">+93 780 555 444</td>
+                                <td class="p-3">کندهار، عینو مینه</td>
+                                <td class="p-3">iPhone 15 Pro Max</td>
+                                <td class="p-3 font-bold text-teal-400">92,500 AFN</td>
+                                <td class="p-3"><span class="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full text-[10px]">تایید شوی</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscription Checkout Modal -->
+    <div id="subModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-md rounded-3xl p-6 space-y-4 border border-amberGold-500/30">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <h3 class="font-bold text-white text-base" id="subModalTitle">د VIP سبسکرپشن فعالول</h3>
+                <button onclick="closeSubModal()" class="text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-right">
+                <p class="text-xs text-gray-300">لطفاً خپل ټاکل شوی تادیاتي سیستم وټاکئ:</p>
+                <div class="space-y-2">
+                    <label class="flex items-center justify-between p-3 rounded-xl bg-gray-900/80 border border-white/10 cursor-pointer">
+                        <span class="text-xs text-white font-bold">سرای شهزاده صرافي / حواله</span>
+                        <input type="radio" name="payMethod" checked class="text-teal-500">
+                    </label>
+                    <label class="flex items-center justify-between p-3 rounded-xl bg-gray-900/80 border border-white/10 cursor-pointer">
+                        <span class="text-xs text-white font-bold">mPaisai امپیسه (روشان)</span>
+                        <input type="radio" name="payMethod" class="text-teal-500">
+                    </label>
+                </div>
+                <button onclick="confirmSubscription()" class="w-full bg-gradient-to-r from-amberGold-500 to-amberGold-600 text-gray-950 font-black py-3 rounded-xl text-sm shadow-lg">
+                    سبسکرپشن تایید کړئ ✨
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Ad Modal -->
+    <div id="postModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-lg rounded-3xl p-6 space-y-4 max-h-[90vh] overflow-y-auto border border-teal-500/30">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <h3 class="font-bold text-white text-base">اعلان ثبتول</h3>
+                <button onclick="closePostModal()" class="text-gray-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <form class="space-y-3 text-right" onsubmit="handlePostSubmit(event)">
+                <div>
+                    <label class="text-xs text-gray-300 block mb-1">د محصول نوم</label>
+                    <input type="text" required placeholder="مثلاً: افغاني خامه‌دوزي واسکټ..." class="w-full bg-gray-900 border border-gray-700 rounded-xl p-2.5 text-sm text-white focus:border-teal-400 focus:outline-none">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-teal-500 to-amberGold-500 text-gray-950 font-black py-3 rounded-xl text-sm shadow-lg">
+                    اعلان خپور کړئ ✨
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ashna AI Modal -->
+    <div id="aiModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-md rounded-3xl p-5 space-y-4 flex flex-col h-[500px] border border-teal-500/30">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-gray-950 font-bold text-xs">AI</div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">اشنا AI مرستندوی</h4>
+                        <p class="text-[10px] text-teal-400">په کاري بڼه روان دی</p>
+                    </div>
+                </div>
+                <button onclick="closeAshnaAI()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <div id="aiChatBox" class="flex-1 overflow-y-auto space-y-3 p-2 text-xs">
+                <div class="bg-gray-800/80 p-3 rounded-2xl rounded-tr-none text-gray-200 max-w-[85%]">
+                    سلام! زه د خان بازار هوښیار مرستندوی **اشنا AI** یم. هر ډول پوښتنه یا فرمایش لرئ دلته يې وواوئ، زه يې جدول ته سپارم! 🇦🇫
+                </div>
+            </div>
+
+            <div class="flex gap-2 pt-2 border-t border-white/10">
+                <input type="text" id="aiInput" placeholder="دلته ولیکئ..." class="flex-1 bg-gray-900 border border-gray-700 rounded-xl px-3 text-xs text-white focus:outline-none">
+                <button onclick="sendAIMessage()" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-2 rounded-xl text-xs font-bold">ولېږه</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        let isUSD = false;
+        let selectedPlan = '';
+
+        function toggleCurrency() {
+            isUSD = !isUSD;
+            const btn = document.getElementById('currencyBtn');
+            const prices = document.querySelectorAll('.price-val');
+            btn.innerText = isUSD ? 'USD $' : 'AFN ؋';
+
+            prices.forEach(el => {
+                const afn = el.getAttribute('data-afn');
+                const usd = el.getAttribute('data-usd');
+                if (isUSD) {
+                    el.innerText = `$${Number(usd).toLocaleString()}`;
+                } else {
+                    el.innerText = `${Number(afn).toLocaleString()} AFN`;
+                }
+            });
+        }
+
+        function filterCategory(cat) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                const prov = card.getAttribute('data-province').toLowerCase();
+                if (title.includes(query) || prov.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function triggerCameraSearch() {
+            alert('📷 لطفاً انځور پورته کړئ، اشنا AI به هغه محصول وپېژني!');
+        }
+
+        function openDashboardModal() { document.getElementById('dashboardModal').classList.remove('hidden'); }
+        function closeDashboardModal() { document.getElementById('dashboardModal').classList.add('hidden'); }
+
+        function openSubModal() { document.getElementById('subModal').classList.remove('hidden'); }
+        function closeSubModal() { document.getElementById('subModal').classList.add('hidden'); }
+
+        function selectSubscription(planName, price) {
+            selectedPlan = planName;
+            document.getElementById('subModalTitle').innerText = `${planName} فعالول (${price} AFN)`;
+            openSubModal();
+        }
+
+        function confirmSubscription() {
+            alert(`🎉 ستاسو د ${selectedPlan} سبسکرپشن فعال شو!`);
+            closeSubModal();
+        }
+
+        function openPostModal() { document.getElementById('postModal').classList.remove('hidden'); }
+        function closePostModal() { document.getElementById('postModal').classList.add('hidden'); }
+
+        function openAshnaAI() { document.getElementById('aiModal').classList.remove('hidden'); }
+        function closeAshnaAI() { document.getElementById('aiModal').classList.add('hidden'); }
+
+        function sendAIMessage() {
+            const input = document.getElementById('aiInput');
+            const chatBox = document.getElementById('aiChatBox');
+            if(!input.value.trim()) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'bg-teal-600/30 p-3 rounded-2xl rounded-tl-none text-teal-200 max-w-[85%] mr-auto text-left';
+            userMsg.innerText = input.value;
+            chatBox.appendChild(userMsg);
+
+            const query = input.value;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            setTimeout(() => {
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'bg-gray-800/80 p-3 rounded-2xl rounded-tr-none text-gray-200 max-w-[85%]';
+                aiMsg.innerText = `د "${query}" معلومات ثبت شول او مستقیم ستا د پلورونکي ډشبورډ او جدول (Dashboard Table) ته واستول شول!`;
+                chatBox.appendChild(aiMsg);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+        }
+
+        function handlePostSubmit(e) {
+            e.preventDefault();
+            alert('🎉 ستاسو اعلان په بریالیتوب خپور شو!');
+            closePostModal();
+        }
+    </script>
+</body>
+</html>
